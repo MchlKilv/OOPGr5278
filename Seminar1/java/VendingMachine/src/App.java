@@ -19,6 +19,7 @@ public class App {
         Product item5 = new Product(60, 1, "3korochki", 1238);
         Product item6 = new Product(150, 2, "snikers", 1239);
         Product item7 = new Bottle(150, 3, "Cola", 1240, 0.5f);
+        // Новые продукты
         Product item8 = new HotDrink(150, 7, "GeenTea", 1241, 0.35f, 60.0f);
         Product item9 = new HotDrink(150, 8, "Americano", 1242, 0.20f, 95.5f);
         Product item10 = new HotDrink(150, 93, "Cappuccino", 1243, 0.45f, 80.0f);
@@ -36,6 +37,7 @@ public class App {
         listProd.add(item5);
         listProd.add(item6);
         listProd.add(item7);
+        // Горячие напитки добавлены
         listProd.add(item8);
         listProd.add(item9);
         listProd.add(item10);

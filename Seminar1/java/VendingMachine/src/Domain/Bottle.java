@@ -1,5 +1,8 @@
 package Domain;
 
+/*
+ * Класс Bottle представлен как наследник от класса Product
+ */
 public class Bottle extends Product {
 
     private float bottleVolume;
@@ -16,11 +19,11 @@ public class Bottle extends Product {
     public void setBottleVolume(float bottleVolume) {
         this.bottleVolume = bottleVolume;
     }
-    
-    @Override 
-    public String toString()
-    {
-        return super.toString() + "volume="+bottleVolume+"\n";
+
+    @Override
+    // Переопределяем вывод для бутылок, добавлен объем бутылки
+    public String toString() {
+        return super.toString() + "volume = " + bottleVolume + " Liter\n";
     }
-    
+
 }

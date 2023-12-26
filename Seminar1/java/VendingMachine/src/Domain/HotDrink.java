@@ -1,5 +1,8 @@
 package Domain;
 
+/*
+ * Класс HotDrink представлен как наследник от класса Bottle
+ */
 public class HotDrink extends Bottle {
 
     private float cupTemperature;
@@ -19,8 +22,8 @@ public class HotDrink extends Bottle {
 
     @Override
     public String toString() {
-        // Переопределили вывод для горячих напитков
-        return super.toString() + "temperature=" + cupTemperature + "\n";
+        // Переопределили вывод для горячих напитков добавлена температура напитка
+        return super.toString() + "temperature = " + cupTemperature + " Celsius\n";
     }
 
 }
