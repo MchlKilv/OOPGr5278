@@ -1,12 +1,11 @@
-package OOPGr5278.Seminar2.SupermarketApp.Interfaces;
+package Seminar2.SuperMarketApp.Interfaces;
 
-public interface IQueueBehavior {
-
-    public void takeInQueue(Actor actor);
+public interface iQueueBehavior {
+    public void takeInQueue(iActorBehavior actor);
 
     public void releaseFromQueue();
 
-    public void TakeOrder();
+    public void takeOrder();
 
     public void giveOrder();
 }

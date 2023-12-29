@@ -1,4 +1,4 @@
-package OOPGr5278.Seminar2.SupermarketApp.Classes;
+package Seminar2.SuperMarketApp.Classes;
 
 public class OrdinaryClient extends Actor {
 
@@ -9,20 +9,8 @@ public class OrdinaryClient extends Actor {
         this.number = number;
     }
 
-    @Override
-    public String getName() {
-        // TODO Auto-generated method stub
-        return name;
-    }
-
-    @Override
-    public void setName(String name) {
-        // TODO Auto-generated method stub
-
-    }
-
     public boolean isTakeOrder() {
-        return super.isTakeOrder;
+        return super.isTakeOrder();
     }
 
     public boolean isMakeOrder() {
@@ -37,7 +25,17 @@ public class OrdinaryClient extends Actor {
         super.isMakeOrder = val;
     }
 
-    public Actor geActor() {
+    public Actor getActor() {
         return this;
     }
+
+    public String getName() {
+        return super.name;
+    }
+
+    @Override
+    public void setName(String name) {
+        super.name = name;
+    }
+
 }
