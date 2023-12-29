@@ -4,6 +4,10 @@ public class SpecialClient extends Actor {
 
     private int idVip;
 
+    public int getIdVip() {
+        return idVip;
+    }
+
     public SpecialClient(String name, int number) {
         super(name);
         this.idVip = number;
