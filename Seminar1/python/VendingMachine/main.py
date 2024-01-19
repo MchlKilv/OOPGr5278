@@ -41,5 +41,3 @@ if __name__ == "__main__":
     # myFrame = MainFrame()
     # myFrame.show()
     # sys.exit(app.exec_())
-
-    # print("Hello, World!")
