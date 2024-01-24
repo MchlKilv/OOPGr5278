@@ -2,13 +2,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import Domain.Employee;
+import Domain.Person;
 import Domain.Student;
 import Domain.StudentGroup;
 import Domain.StudentStream;
-// import Domain.Employee;
-// import Domain.Person;
-// import Domain.Teacher;
-// import controllers.AccountController;
+import Domain.Teacher;
+import controllers.AccountController;
+import services.iTeacherService;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -57,53 +58,89 @@ public class App {
 
         // Группа 3 №135
 
-        List<Student> listGroup3 = new ArrayList<>();
+        ArrayList<Student> listGroup3 = new ArrayList<>();
         listGroup3.add(student12);
         listGroup3.add(student13);
         listGroup3.add(student14);
 
         StudentGroup group3 = new StudentGroup(listGroup3, 135);
 
-        for (Student stud : group1) {
-            System.out.println(stud);
-        }
-
-        System.out.println("--------------------------------------------");
-        for (Student stud : group2) {
-            System.out.println(stud);
-        }
-
-        System.out.println("--------------------------------------------");
-
-        for (Student stud : group3) {
-            System.out.println(stud);
-        }
-        System.out.println("--------------------------------------------");
-        // Список групп
-        List<StudentGroup> groups = new ArrayList<>(List.of(group1, group2, group3));
-        // Объединение групп в один поток студентов
-        StudentStream str = new StudentStream(groups, 1);
-
-        for (StudentGroup group : str) {
-            System.out.println(group);
-        }
-
-        System.out.println(str);
-
-        // Сортировка по количеству студентов в группах потока
-        Collections.sort(str.getStream());
-        for (StudentGroup group : str) {
-            System.out.println(group);
-        }
-        // for (Student stud : group1.getGroup()) {
-        // System.out.println("Группа " + group1.getIdGroup() + " " + stud);
+        // for (Student stud : group1) {
+        // System.out.println(stud);
         // }
 
-        // Teacher t1 = new Teacher("John", 50, "Доцент");
-        // Employee e1 = new Employee("Fedor", 35, "Директор");
+        // System.out.println("--------------------------------------------");
+        // for (Student stud : group2) {
+        // System.out.println(stud);
+        // }
+
+        // System.out.println("--------------------------------------------");
+
+        // for (Student stud : group3) {
+        // System.out.println(stud);
+        // }
+        // System.out.println("--------------------------------------------");
+        // // Список групп
+        // List<StudentGroup> groups = new ArrayList<>(List.of(group1, group2, group3));
+        // // Объединение групп в один поток студентов
+        // StudentStream str = new StudentStream(groups, 1);
+
+        // for (StudentGroup group : str) {
+        // System.out.println(group);
+        // }
+
+        // System.out.println(str);
+
+        // // Сортировка по количеству студентов в группах потока
+        // Collections.sort(str.getStream());
+        // for (StudentGroup group : str) {
+        // System.out.println(group);
+        // }
+
+        // Создание и вывод списка преподавателей с использованием класса
+        // iTeacherService
+        iTeacherService teacherService = new iTeacherService();
+        teacherService.create("Alex", 55);
+        teacherService.create("Igor", 40);
+        teacherService.create("Eduard", 50);
+        teacherService.create("Vasily", 35);
+        teacherService.create("Sergey", 45);
+        teacherService.create("Dmitry", 30);
+        teacherService.create("Boris", 40);
+
+        System.out.println("--------------------All teachers----------------------");
+        System.out.println(teacherService.getAll());
+        teacherService.sortByFIO();
+        System.out.println("------------------SortByFIO teachers---------------------");
+        System.out.println(teacherService.getAll());
+        System.out.println("--------------------------------------------");
+
+        // Создание и вывод списка сотрудников
+        Teacher t1 = new Teacher("Eduard", 50, "Доцент");
+        Teacher t2 = new Teacher("Alex", 55, "Доцент");
+        Teacher t3 = new Teacher("Igor", 40, "Доцент");
+
+        ArrayList<Teacher> teachers = new ArrayList<>();
+        teachers.add(t1);
+        teachers.add(t2);
+        teachers.add(t3);
+
+        Employee e1 = new Employee("Fedor", 35, "Директор");
+        Employee e2 = new Employee("Vladimir", 40, "Заместитель директора");
+        Employee e3 = new Employee("Sergey", 45, "Бухгалтер");
+
+        ArrayList<Employee> employees = new ArrayList<>();
+        employees.add(e1);
+        employees.add(e2);
+        employees.add(e3);
+
         // AccountController controller = new AccountController();
         // controller.paySalary(t1, 50000);
-        // controller.paySalary(e1, 100000);
+        // controller.paySalary(e1, 25000);
 
+        // Вывод среднего возраста с помощью AccountController
+        AccountController.averageAge(teachers);
+        AccountController.averageAge(employees);
+        AccountController.averageAge(listGroup3);
     }
 }

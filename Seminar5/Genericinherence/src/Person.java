@@ -1,4 +1,3 @@
-package Domain;
 
 public abstract class Person {
     private String name;
@@ -8,7 +7,6 @@ public abstract class Person {
         // Конструктор класса Person
         this.name = name;
         this.age = age;
-
     }
 
     public String getName() {

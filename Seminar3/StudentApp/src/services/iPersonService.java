@@ -1,9 +1,9 @@
-// package services;
+package services;
 
-// import java.util.List;
+import java.util.List;
 
-// public interface iPersonService<T> {
-// List<T> getAll();
+public interface iPersonService<T> {
+    List<T> getAll();
 
-// void create(String name, int age);
-// }
+    void create(String name, int age);
+}

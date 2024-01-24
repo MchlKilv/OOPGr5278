@@ -1,37 +1,38 @@
-// package services;
+package services;
 
-// import java.util.ArrayList;
-// import java.util.List;
+import java.util.ArrayList;
+import java.util.List;
 
-// import Domain.PersonComparator;
+import Domain.PersonComparator;
+import Domain.Student;
 
-// public class StudentService implements iPersonService<Student> {
-// private int count;
-// private List<Student> students;
+public class StudentService implements iPersonService<Student> {
+    private int count;
+    private List<Student> students;
 
-// public StudentService() {
+    public StudentService() {
 
-// students = new ArrayList<>();
+        students = new ArrayList<>();
 
-// }
+    }
 
-// @Override
-// public List<Student> getAll() {
-// // TODO Auto-generated method stub
-// return students;
-// }
+    @Override
+    public List<Student> getAll() {
 
-// @Override
-// public void create(String name, int age) {
-// // TODO Auto-generated method stub
-// Student stud = new Student(name, age);
-// count++;
-// students.add(stud);
-// sortByFIO();
-// }
+        return students;
+    }
 
-// public void sortByFIO() {
-// PersonComparator<Student> studComp = new PersonComparator<>();
-// students.sot(studComp);
-// }
-// }
+    @Override
+    public void create(String name, int age) {
+
+        Student stud = new Student(name, age);
+        count++;
+        students.add(stud);
+        sortByFIO();
+    }
+
+    public void sortByFIO() {
+        PersonComparator<Student> studComp = new PersonComparator<>();
+        students.sort(studComp);
+    }
+}
