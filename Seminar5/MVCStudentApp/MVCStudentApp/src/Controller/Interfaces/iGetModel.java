@@ -1,10 +1,14 @@
 package Controller.Interfaces;
 
-import java.util.List;
+import java.util.HashMap;
+// import java.util.List;
 
 import Model.Domain.Student;
 
 public interface iGetModel {
-    public List<Student> getStudents();
+
+    HashMap<Long, Student> getStudents();
+
+    // public List<Student> getStudents();
 
 }

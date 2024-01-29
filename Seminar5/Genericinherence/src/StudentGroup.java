@@ -1,7 +1,7 @@
 import java.util.Iterator;
 import java.util.List;
 
-public class StudentGroup<T extends Comparable<T>, V> implements Iterable<Student<T>,Comparable<StudentGroup> {
+public class StudentGroup<T extends Comparable<T>, V> implements Iterable<Student<T, V>> {
     private List<Student<T, V>> group;
     private V idGroup;
 
@@ -60,20 +60,7 @@ public class StudentGroup<T extends Comparable<T>, V> implements Iterable<Studen
 
     @Override
     public Iterator<Student<T, V>> iterator() {
-        return new StudentIterator(group);
-    }
-
-    @Override
-    public int compareTo(StudentGroup<T extends Comparable<T>, V> g) {
-        if (g.getGroup().size() > group.size()) {
-            return -1;
-        }
-
-        if (g.getGroup().size() < group.size()) {
-            return 1;
-        }
-
-        return 0;
+        return new StudentIterator<T, V>(group);
     }
 
 }

@@ -29,6 +29,6 @@ public abstract class Person {
     @Override
     public String toString() {
         // Переопределяем метод toString()
-        return "Persone name=" + name + "age=" + age;
+        return "Persone [name=" + name + "age=" + age + "]";
     }
 }
