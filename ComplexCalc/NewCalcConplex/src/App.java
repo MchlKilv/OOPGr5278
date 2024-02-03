@@ -7,9 +7,16 @@ import View.iCalculatorView;
 import Model.ComplexCalculatorModel;
 import Model.LoggerModel;
 
+/**
+ * Запуск приложения калькулятора комплексных чисел с логгером
+ */
 public class App {
     public static void main(String[] args) {
-        iLogger textLogger = new TextLogger("loggers/log_complexCalc.txt");
+        /**
+         * Создание логгера, модели калькулятора, интерфейса для вывода результата и
+         * контроллера
+         */
+        iLogger textLogger = new TextLogger("log_complexCalc.txt");
         iCalculatorModel complexCalculatorModel = new LoggerModel(new ComplexCalculatorModel(), textLogger);
         iCalculatorView calculatorView = new DefaultCalculatorView();
         CalculatorController calculatorController = new CalculatorController(complexCalculatorModel, calculatorView);
